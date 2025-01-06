@@ -5,17 +5,21 @@
 package com.automoto.view;
 
 /**
- *
+ * This class represents the loading screen for the AutoMoto application.
+ * It displays a progress bar and a logo during the loading process.
+ * After the loading is complete, it opens the main application window.
+ * 
  * @author aashutoshdhakal
  */
 public class LoadingScreen extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoadingScreen
+     * Constructor for LoadingScreen.
+     * Initializes the components and starts the loading process.
      */
     public LoadingScreen() {
         initComponents(); 
-        loading();
+        loading(); // Loading simulation in initialized at start
     }
 
     /**
@@ -33,6 +37,7 @@ public class LoadingScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 500));
+        setUndecorated(true);
 
         pnlBaseLoadingScreen.setMaximumSize(new java.awt.Dimension(500, 500));
         pnlBaseLoadingScreen.setMinimumSize(new java.awt.Dimension(500, 500));
@@ -69,6 +74,12 @@ public class LoadingScreen extends javax.swing.JFrame {
      */
      
     
+    /**
+     * Simulates the loading process.
+     * Updates the progress bar from 0% to 100%, then opens the main application window.
+     */
+    
+    // Progress Code for Loading Screen
     private void loading() {
         new Thread(new Runnable() {
             @Override
@@ -85,7 +96,7 @@ public class LoadingScreen extends javax.swing.JFrame {
                     
                 } 
                 catch (Exception e) {
-                    e.printStackTrace(); // Print exception details
+                    e.printStackTrace(); // Catches the exception if any, and throws exception details
                 }
             }
         }).start();

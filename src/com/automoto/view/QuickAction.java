@@ -5,6 +5,10 @@
 package com.automoto.view;
 
 import com.automoto.model.BikeModel;
+import com.automoto.model.RentalModel;
+import com.automoto.view.AdminPanel;
+import java.util.LinkedList;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -14,6 +18,9 @@ import javax.swing.JTextField;
  * @author aashutoshdhakal
  */
 public class QuickAction extends javax.swing.JFrame {
+    
+    LinkedList<RentalModel> RentRecord = new LinkedList<>();
+    
 
     /**
      * Creates new form QuickAction
@@ -47,7 +54,7 @@ public class QuickAction extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupGender = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        panelQuickAction = new javax.swing.JPanel();
         labelQuickAction = new javax.swing.JLabel();
         buttonHome = new javax.swing.JButton();
         buttonRent = new javax.swing.JButton();
@@ -121,16 +128,16 @@ public class QuickAction extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1200));
 
-        jPanel1.setBackground(new java.awt.Color(48, 71, 94));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1920, 1200));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1920, 1200));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1200));
-        jPanel1.setLayout(null);
+        panelQuickAction.setBackground(new java.awt.Color(48, 71, 94));
+        panelQuickAction.setMaximumSize(new java.awt.Dimension(1920, 1200));
+        panelQuickAction.setMinimumSize(new java.awt.Dimension(1920, 1200));
+        panelQuickAction.setPreferredSize(new java.awt.Dimension(1920, 1200));
+        panelQuickAction.setLayout(null);
 
         labelQuickAction.setFont(new java.awt.Font("Silom", 1, 64)); // NOI18N
         labelQuickAction.setForeground(new java.awt.Color(240, 84, 84));
         labelQuickAction.setText("Quick Action");
-        jPanel1.add(labelQuickAction);
+        panelQuickAction.add(labelQuickAction);
         labelQuickAction.setBounds(740, 70, 460, 70);
 
         buttonHome.setBackground(new java.awt.Color(240, 84, 84));
@@ -147,7 +154,7 @@ public class QuickAction extends javax.swing.JFrame {
                 buttonHomeActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonHome);
+        panelQuickAction.add(buttonHome);
         buttonHome.setBounds(110, 250, 220, 100);
 
         buttonRent.setBackground(new java.awt.Color(240, 84, 84));
@@ -164,7 +171,7 @@ public class QuickAction extends javax.swing.JFrame {
                 buttonRentActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonRent);
+        panelQuickAction.add(buttonRent);
         buttonRent.setBounds(110, 380, 220, 100);
 
         buttonReturn.setBackground(new java.awt.Color(240, 84, 84));
@@ -181,7 +188,7 @@ public class QuickAction extends javax.swing.JFrame {
                 buttonReturnActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonReturn);
+        panelQuickAction.add(buttonReturn);
         buttonReturn.setBounds(110, 510, 220, 100);
 
         buttonBack.setBackground(new java.awt.Color(240, 84, 84));
@@ -198,7 +205,7 @@ public class QuickAction extends javax.swing.JFrame {
                 buttonBackActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonBack);
+        panelQuickAction.add(buttonBack);
         buttonBack.setBounds(110, 830, 220, 100);
 
         buttonExit.setBackground(new java.awt.Color(240, 84, 84));
@@ -215,7 +222,7 @@ public class QuickAction extends javax.swing.JFrame {
                 buttonExitActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonExit);
+        panelQuickAction.add(buttonExit);
         buttonExit.setBounds(110, 960, 220, 100);
 
         panelHome.setBackground(new java.awt.Color(245, 245, 245));
@@ -226,7 +233,7 @@ public class QuickAction extends javax.swing.JFrame {
         panelHome.add(iconQuickActionBase);
         iconQuickActionBase.setBounds(0, 0, 1390, 880);
 
-        jPanel1.add(panelHome);
+        panelQuickAction.add(panelHome);
         panelHome.setBounds(430, 220, 1390, 880);
 
         panelRent.setBackground(new java.awt.Color(245, 245, 245));
@@ -430,7 +437,7 @@ public class QuickAction extends javax.swing.JFrame {
         panelRent.add(pnlRentBikePictureDisplay);
         pnlRentBikePictureDisplay.setBounds(830, 180, 450, 560);
 
-        jPanel1.add(panelRent);
+        panelQuickAction.add(panelRent);
         panelRent.setBounds(430, 220, 1390, 880);
 
         panelReturn.setBackground(new java.awt.Color(245, 245, 245));
@@ -559,7 +566,7 @@ public class QuickAction extends javax.swing.JFrame {
 
         panelReturn.add(pnlReturnBannerBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, -1, -1));
 
-        jPanel1.add(panelReturn);
+        panelQuickAction.add(panelReturn);
         panelReturn.setBounds(430, 220, 1390, 880);
 
         panelDecuration1.setBackground(new java.awt.Color(245, 245, 245));
@@ -575,7 +582,7 @@ public class QuickAction extends javax.swing.JFrame {
             .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jPanel1.add(panelDecuration1);
+        panelQuickAction.add(panelDecuration1);
         panelDecuration1.setBounds(360, 240, 50, 120);
 
         panelDecuration2.setBackground(new java.awt.Color(245, 245, 245));
@@ -591,7 +598,7 @@ public class QuickAction extends javax.swing.JFrame {
             .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jPanel1.add(panelDecuration2);
+        panelQuickAction.add(panelDecuration2);
         panelDecuration2.setBounds(360, 370, 50, 120);
 
         panelDecuration3.setBackground(new java.awt.Color(245, 245, 245));
@@ -607,11 +614,11 @@ public class QuickAction extends javax.swing.JFrame {
             .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jPanel1.add(panelDecuration3);
+        panelQuickAction.add(panelDecuration3);
         panelDecuration3.setBounds(360, 500, 50, 120);
 
         IconQuickActionBaseplate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/automoto/resources/QuickActionBasePlate.png"))); // NOI18N
-        jPanel1.add(IconQuickActionBaseplate);
+        panelQuickAction.add(IconQuickActionBaseplate);
         IconQuickActionBaseplate.setBounds(0, 0, 1920, 1200);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -619,13 +626,13 @@ public class QuickAction extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelQuickAction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelQuickAction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -690,7 +697,7 @@ public class QuickAction extends javax.swing.JFrame {
 
     private void buttonExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonExitMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        System.exit(0); // Exits the system
     }//GEN-LAST:event_buttonExitMouseClicked
 
     private void fieldRentLicenceNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRentLicenceNoActionPerformed
@@ -755,6 +762,9 @@ public class QuickAction extends javax.swing.JFrame {
         long licenceNo;
         long mobileNo;
         String documentType = (String) comboBoxRentDocumentType.getSelectedItem();
+        int gender = 1;
+        String bikeModel = "Temp Model";
+        int durationOfRent = 1;
 
         try {
             licenceNo = Long.parseLong(fieldRentLicenceNo.getText());
@@ -784,6 +794,15 @@ public class QuickAction extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gender is not selected. Please select a gender!","Error",JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        if (checkboxRentBikeModel.equals("Select Model")) {
+            JOptionPane.showMessageDialog(null,"Please Select the Bike Model", "Model Not Selected!", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        
+        
+        
+        
         
         javax.swing.JOptionPane.showMessageDialog(this, "Bike Renturned successfully!");
         
@@ -919,7 +938,6 @@ public class QuickAction extends javax.swing.JFrame {
     private javax.swing.JLabel iconRentBanner;
     private javax.swing.JLabel iconReturnBanner;
     private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelQuickAction;
     private javax.swing.JLabel labelRentBikeModel;
     private javax.swing.JLabel labelRentDateOfBirth;
@@ -955,6 +973,7 @@ public class QuickAction extends javax.swing.JFrame {
     private javax.swing.JPanel panelDecuration2;
     private javax.swing.JPanel panelDecuration3;
     private javax.swing.JPanel panelHome;
+    private javax.swing.JPanel panelQuickAction;
     private javax.swing.JPanel panelRent;
     private javax.swing.JPanel panelReturn;
     private javax.swing.JPanel pnlRentBikePictureDisplay;

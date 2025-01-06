@@ -174,25 +174,28 @@ public class SelectionOption extends javax.swing.JFrame {
 
     private void buttonBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBackMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new Home().setVisible(true);
+        // Creating closing of SelectionOption and opeining of Home process.
+        this.setVisible(false); // Visibility of current frame (SelectionOption) is False when back button is pressed.
+        new Home().setVisible(true); // new object of Home Frame class is created and its visible is set to true.
     }//GEN-LAST:event_buttonBackMouseClicked
 
     private void buttonExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonExitMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        System.exit(0); // Exits the system
     }//GEN-LAST:event_buttonExitMouseClicked
 
     private void panelAsButtonForQuickActionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAsButtonForQuickActionMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new QuickAction().setVisible(true);
+        // Creating closing of SelectionOption and opeining of Quick Action process.
+        this.setVisible(false); // Visibility of current frame (SelectionOption) is False when Quick Action button is pressed.
+        new QuickAction().setVisible(true); // new object of QuickAction Frame class is created and its visible is set to true.
     }//GEN-LAST:event_panelAsButtonForQuickActionMouseClicked
 
     private void panelAsButtonForAdminPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAsButtonForAdminPanelMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new AdminPanel().setVisible(true);
+        // Creating closing of SelectionOption and opeining of Admin Panel process.
+        this.setVisible(false); // Visibility of current frame (SelectionOption) is False when Admin Panel button is pressed.
+        new AdminPanel().setVisible(true); // new object of AdminPanel Frame class is created and its visible is set to true.
     }//GEN-LAST:event_panelAsButtonForAdminPanelMouseClicked
 
     /**

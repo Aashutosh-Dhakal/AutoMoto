@@ -15,7 +15,7 @@ public class AutoMoto extends javax.swing.JFrame {
      */
     public AutoMoto() {
         initComponents();
-        labelIncorrectCredentials.setVisible(false);
+        labelIncorrectCredentials.setVisible(false); // Incorrect Credential Warning (as label) is hide first when the page runs.
         
     }
 
@@ -216,11 +216,13 @@ public class AutoMoto extends javax.swing.JFrame {
 
     private void checkboxShowPasswordItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxShowPasswordItemStateChanged
         // TODO add your handling code here:
+        
         if (checkboxShowPassword.isSelected()) {
-            passwordField.setEchoChar((char) 0); // Shows the password
+            passwordField.setEchoChar((char) 0); // Shows the password when checkbox is unchecked
         } else {
-            passwordField.setEchoChar('*'); // Hides the password
+            passwordField.setEchoChar('*'); // Hides the password when checkbox is checked
         }
+        
     }//GEN-LAST:event_checkboxShowPasswordItemStateChanged
 
     private void buttonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLoginMouseClicked
@@ -230,10 +232,10 @@ public class AutoMoto extends javax.swing.JFrame {
         String password = passwordField.getText();
 
                       
-        // Logic for Login
+        // Checks if Given Username and Password is Correct or Not.
         if (username.equals("admin") && password.equals("admin")) {
             this.setVisible(false);
-            new Home().setVisible(true);
+            new Home().setVisible(true); // new object of home
         } 
         else {
             // Validation for Empty Field
@@ -244,7 +246,7 @@ public class AutoMoto extends javax.swing.JFrame {
                 // Validation for incorrect Username or Password
                 labelIncorrectCredentials.setText("Incorrect Username or Password. Please Try Again!");
             }
-            labelIncorrectCredentials.setVisible(true);
+            labelIncorrectCredentials.setVisible(true); // If Credential is wrong then the warning message is displayed.
         }
     }//GEN-LAST:event_buttonLoginMouseClicked
 

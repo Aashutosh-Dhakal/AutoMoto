@@ -151,8 +151,8 @@ public class Home extends javax.swing.JFrame {
 
     private void buttonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEnterMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        new SelectionOption().setVisible(true);
+        this.setVisible(false);   //Set the visible of current frame to false
+        new SelectionOption().setVisible(true); // Creation of New object of SelectionOption and its visible is set True.
     }//GEN-LAST:event_buttonEnterMouseClicked
 
     private void buttonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnterActionPerformed
