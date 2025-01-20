@@ -23,6 +23,7 @@ public class RentalModel {
     private long documentNumber;
     private int durationOfRent;
     private long mobileNumber;
+    private String status;
     
     
      /**
@@ -39,6 +40,7 @@ public class RentalModel {
      * @param durationOfRent Duration of the rental
      * @param mobileNumber Customer's mobile number
      */
+    
     public RentalModel (String firstName, String lastName, String dob, String gender, String bikeModel, long licenceNo, 
             String documentType, long documentNumber, int durationOfRent, long mobileNumber){
         this.firstName = firstName;
@@ -51,6 +53,7 @@ public class RentalModel {
         this.documentNumber = documentNumber;
         this.durationOfRent = durationOfRent;
         this.mobileNumber = mobileNumber;
+        this.status = "Rented";
     }
 
     // Gets First Name of the object of the class
@@ -109,7 +112,7 @@ public class RentalModel {
     }
 
     // Sets Licence Number of the object of the class
-    public void setLicenceNumber(int licenceNumber) {
+    public void setLicenceNumber(long licenceNumber) {
         this.licenceNumber = licenceNumber;
     }
 
@@ -129,7 +132,7 @@ public class RentalModel {
     }
 
     // Sets Document Number of the object of the class
-    public void setDocumentNumber(int documentNumber) {
+    public void setDocumentNumber(long documentNumber) {
         this.documentNumber = documentNumber;
     }
 
@@ -149,8 +152,18 @@ public class RentalModel {
     }
 
     // Sets Mobile Number of the object of the class
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(long mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+    
+    // Gets Rental Status of the object of the class
+    public String getStatus() {
+        return status;
+    }
+
+    // Sets Rental Status of the object of the class
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 }

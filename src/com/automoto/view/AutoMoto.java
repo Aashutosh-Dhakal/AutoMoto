@@ -4,6 +4,8 @@
  */
 package com.automoto.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aashutoshdhakal
@@ -16,7 +18,7 @@ public class AutoMoto extends javax.swing.JFrame {
     public AutoMoto() {
         initComponents();
         labelIncorrectCredentials.setVisible(false); // Incorrect Credential Warning (as label) is hide first when the page runs.
-        
+
     }
 
     /**
@@ -64,6 +66,7 @@ public class AutoMoto extends javax.swing.JFrame {
         labelPassword.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         labelPassword.setText("Password:");
 
+        fieldUsername.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         fieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldUsernameActionPerformed(evt);
@@ -110,6 +113,8 @@ public class AutoMoto extends javax.swing.JFrame {
                 checkboxShowPasswordActionPerformed(evt);
             }
         });
+
+        passwordField.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         labelIncorrectCredentials.setForeground(new java.awt.Color(255, 51, 51));
         labelIncorrectCredentials.setText("Incorrect Username or Password. Please Try Again!");
@@ -203,11 +208,29 @@ public class AutoMoto extends javax.swing.JFrame {
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
         // TODO add your handling code here:
-        
+        //Storing the value of Username and password from the fields.
+        String username = fieldUsername.getText();
+        String password = passwordField.getText();
+
+        // Checks if Given Username and Password is Correct or Not.
+        if (username.equals("admin") && password.equals("admin")) {
+            this.setVisible(false);
+            new Home().setVisible(true); // new object of home
+        } else {
+            // Validation for Empty Field
+            if (username.isEmpty() || password.isEmpty()) {
+                labelIncorrectCredentials.setText("Empty Information! Please fill out the credentials.");
+            } else {
+                // Validation for incorrect Username or Password
+                labelIncorrectCredentials.setText("Incorrect Username or Password. Please Try Again!");
+            }
+            labelIncorrectCredentials.setVisible(true); // If Credential is wrong then the warning message is displayed.
+        }
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void buttonForgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForgotPasswordActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Visit http://AutoMoto.forgotPassword/help for further process", "Forgot Password?", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_buttonForgotPasswordActionPerformed
 
     private void checkboxShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxShowPasswordActionPerformed
@@ -216,38 +239,17 @@ public class AutoMoto extends javax.swing.JFrame {
 
     private void checkboxShowPasswordItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxShowPasswordItemStateChanged
         // TODO add your handling code here:
-        
+
         if (checkboxShowPassword.isSelected()) {
-            passwordField.setEchoChar((char) 0); // Shows the password when checkbox is unchecked
+            passwordField.setEchoChar((char) 0); // Shows the password when checkbox is checked
         } else {
-            passwordField.setEchoChar('*'); // Hides the password when checkbox is checked
+            passwordField.setEchoChar('*'); // Hides the password when checkbox is unchecked
         }
-        
+
     }//GEN-LAST:event_checkboxShowPasswordItemStateChanged
 
     private void buttonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLoginMouseClicked
         // TODO add your handling code here:
-        //Storing the value of Username and password from the fields.
-        String username = fieldUsername.getText();
-        String password = passwordField.getText();
-
-                      
-        // Checks if Given Username and Password is Correct or Not.
-        if (username.equals("admin") && password.equals("admin")) {
-            this.setVisible(false);
-            new Home().setVisible(true); // new object of home
-        } 
-        else {
-            // Validation for Empty Field
-            if (username.isEmpty() || password.isEmpty()) { 
-                labelIncorrectCredentials.setText("Empty Information! Please fill out the credentials.");
-            }
-            else{
-                // Validation for incorrect Username or Password
-                labelIncorrectCredentials.setText("Incorrect Username or Password. Please Try Again!");
-            }
-            labelIncorrectCredentials.setVisible(true); // If Credential is wrong then the warning message is displayed.
-        }
     }//GEN-LAST:event_buttonLoginMouseClicked
 
     /**
